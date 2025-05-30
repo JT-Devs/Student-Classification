@@ -2,7 +2,7 @@ package app;
 
 import coleccion.ColeccionEstudiantes;
 import dominio.Estudiante;
-import iterator.IteradorEstudiante;
+import iterator.Iterador;
 import visitor.Element;
 import visitor.Visitor;
 import visitor.VisitorValidacionDatos;
@@ -41,7 +41,7 @@ public class Client {
                         tipo = "lista";
                     }
 
-                    IteradorEstudiante iterador = coleccion.createIterator(tipo);
+                    Iterador iterador = coleccion.createIterator(tipo);
                     System.out.println("\nRecorriendo estudiantes por tipo: " + tipo.toUpperCase());
                     System.out.println("==========================================");
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 
 import visitor.Element;
-import iterator.IteradorEstudiante;
+import iterator.Iterador;
 import iterator.IterableColeccion;
 import iterator.IteratorArrayList;
 import iterator.IteratorTreeSet;
@@ -22,7 +22,7 @@ public class ColeccionEstudiantes implements IterableColeccion {
     }
 
     @Override
-    public IteradorEstudiante createIterator(String tipo) {
+    public Iterador createIterator(String tipo) {
         if (tipo.equalsIgnoreCase("lista")) {
             return new IteratorArrayList(listaEstudiantes);
         } else if (tipo.equalsIgnoreCase("conjunto")) {

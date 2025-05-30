@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 import visitor.Element;
 
-public class IteratorTreeSet implements IteradorEstudiante {
+public class IteratorTreeSet implements Iterador {
     private Iterator<Element> iterator;
 
     public IteratorTreeSet(TreeSet<Element> collection) {
