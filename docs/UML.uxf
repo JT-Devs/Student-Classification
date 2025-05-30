@@ -1,59 +1,83 @@
-<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>372</x><y>102</y><w>60</w><h>24</h></coordinates><panel_attributes>Client
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><element><id>UMLClass</id><coordinates><x>859</x><y>53</y><w>80</w><h>32</h></coordinates><panel_attributes>Client
 --
-+ main()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>204</y><w>126</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
++ main()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>147</x><y>189</y><w>168</w><h>64</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
 IterableCollection
 --
 --
-+ createIterator() : Iterator</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>342</x><y>198</y><w>126</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
++ createIterator() : Iterator</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>819</x><y>181</y><w>168</w><h>64</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
 Iterator
 --
 --
 + hasMore() : boolean
-+ getNext() : Estudiante </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>594</x><y>288</y><w>126</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
++ getNext() : Element </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1155</x><y>301</y><w>168</w><h>64</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
 Visitor
 --
 --
-+ visit(e: Estudiante)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>594</x><y>204</y><w>126</w><h>36</h></coordinates><panel_attributes>
++ visit(e: Estudiante)
++ visit(e: Docente)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1155</x><y>173</y><w>168</w><h>64</h></coordinates><panel_attributes>
 VisitorValidacionDatos
 --
 --
-+ visit(e: Estudiante)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>774</x><y>360</y><w>126</w><h>66</h></coordinates><panel_attributes>Estudiante
++ visit(e: Estudiante)
++ visit(e: Docente)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1307</x><y>429</y><w>168</w><h>88</h></coordinates><panel_attributes>Estudiante
 --
 - codigo: String
 - nombre: String
 - direccion: String
 - telefonos: List&lt;String&gt;
 --
-+ accept(v: Visitor)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>222</x><y>378</y><w>168</w><h>66</h></coordinates><panel_attributes>IteratorArrayList
++ accept(v: Visitor)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>283</x><y>485</y><w>224</w><h>88</h></coordinates><panel_attributes>IteratorArrayList
 --
-- collection: ArrayList&lt;Estudiante&gt;
+- collection: ArrayList&lt;Element&gt;
 - index: int
 --
-+ IteratorArrayList(c: ArrayList&lt;Estudiante&gt;)
-+ getNext() : Estudiante
-+ hasMore() : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>426</x><y>378</y><w>156</w><h>66</h></coordinates><panel_attributes>IteratorTreeSet
++ IteratorArrayList(c: ArrayList&lt;Element&gt;)
++ getNext() : Element
++ hasMore() : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>779</x><y>485</y><w>208</w><h>88</h></coordinates><panel_attributes>IteratorTreeSet
 --
-- collection: TreeSet&lt;Estudiante&gt;
-- iterator: java.util.Iterator&lt;Estudiante&gt;
+- collection: TreeSet&lt;Element&gt;
+- iterator: java.util.Iterator&lt;Element&gt;
 --
-+ IteratorTreeSet(c: TreeSet&lt;Estudiante&gt;)
-+ getNext() : Estudiante
-+ hasMore() : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>78</x><y>300</y><w>150</w><h>66</h></coordinates><panel_attributes>ColeccionEstudiantes
++ IteratorTreeSet(c: TreeSet&lt;Element&gt;)
++ getNext() : Element
++ hasMore() : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>131</x><y>317</y><w>200</w><h>88</h></coordinates><panel_attributes>ColeccionElementos
 --
-- lista: ArrayList&lt;Estudiante&gt;
-- conjunto: TreeSet&lt;Estudiante&gt;
+- lista: ArrayList&lt;Element&gt;
+- conjunto: TreeSet&lt;Element&gt;
 --
 + createIterator(tipo: String) : Iterator
-+ addEstudiante(e: Estudiante)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>228</y><w>144</w><h>24</h></coordinates><panel_attributes>lt=&lt;.
-</panel_attributes><additional_attributes>220;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>396</x><y>120</y><w>18</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
-</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>144</x><y>102</y><w>240</w><h>114</h></coordinates><panel_attributes>lt=&lt;-
-</panel_attributes><additional_attributes>10;170;10;20;380;20</additional_attributes></element><element><id>Relation</id><coordinates><x>144</x><y>246</y><w>18</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>144</x><y>360</y><w>396</w><h>144</h></coordinates><panel_attributes>lt=&lt;-&gt;
-</panel_attributes><additional_attributes>10;10;10;220;640;220;640;140</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>438</y><w>18</w><h>66</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>240</y><w>114</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>170;10;170;80;10;80;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>396</x><y>282</y><w>144</w><h>108</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;220;10;220;160</additional_attributes></element><element><id>Relation</id><coordinates><x>426</x><y>108</y><w>180</w><h>126</h></coordinates><panel_attributes>lt=&lt;.
-</panel_attributes><additional_attributes>280;190;170;190;170;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>654</x><y>234</y><w>18</w><h>66</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>654</x><y>330</y><w>132</w><h>78</h></coordinates><panel_attributes>lt=&lt;.
-</panel_attributes><additional_attributes>200;110;10;110;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>786</x><y>198</y><w>126</w><h>48</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
++ addElemento(e: Element)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>307</x><y>221</y><w>528</w><h>32</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>640;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>891</x><y>77</y><w>24</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>219</x><y>53</y><w>656</w><h>152</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;170;10;20;800;20</additional_attributes></element><element><id>Relation</id><coordinates><x>219</x><y>245</y><w>24</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>219</x><y>397</y><w>904</w><h>320</h></coordinates><panel_attributes>lt=&lt;-&gt;
+</panel_attributes><additional_attributes>10;10;10;380;1110;380;1110;220</additional_attributes></element><element><id>Relation</id><coordinates><x>387</x><y>565</y><w>24</w><h>152</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>387</x><y>237</y><w>528</w><h>264</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>640;10;640;80;10;80;10;310</additional_attributes></element><element><id>Relation</id><coordinates><x>891</x><y>293</y><w>224</w><h>208</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;260;10;260;240</additional_attributes></element><element><id>Relation</id><coordinates><x>931</x><y>61</y><w>240</w><h>168</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>280;190;170;190;170;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1235</x><y>229</y><w>24</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1235</x><y>357</y><w>368</w><h>240</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>440;200;440;280;10;280;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1411</x><y>181</y><w>168</w><h>64</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
 Element
 --
 --
-+ accept(v: Visitor)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>522</x><y>102</y><w>336</w><h>108</h></coordinates><panel_attributes>lt=&lt;.
-</panel_attributes><additional_attributes>540;160;540;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>840</x><y>240</y><w>18</w><h>132</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>714</x><y>216</y><w>84</w><h>108</h></coordinates><panel_attributes>lt=&lt;.
-</panel_attributes><additional_attributes>10;160;60;160;60;10;120;10</additional_attributes></element></diagram>
++ accept(v: Visitor)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1059</x><y>53</y><w>448</w><h>144</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>540;160;540;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1395</x><y>237</y><w>112</w><h>208</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>120;10;120;170;10;170;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>1315</x><y>205</y><w>112</w><h>144</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;160;60;160;60;10;120;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1499</x><y>429</y><w>168</w><h>88</h></coordinates><panel_attributes>Docente
+--
+- codigo: String
+- nombre: String
+- direccion: String
+- telefonos: List&lt;String&gt;
+--
++ accept(v: Visitor)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1483</x><y>365</y><w>112</w><h>80</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;120;10;120;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1379</x><y>509</y><w>24</w><h>88</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>531</x><y>485</y><w>232</w><h>88</h></coordinates><panel_attributes>IteratorArrayListReverso
+--
+- collection: ArrayList&lt;Element&gt;
+- index: int 
+--
++ IteratorArrayListReverso(ArrayList&lt;Element&gt;)
++ getNext() : Element
++ hasMore() : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1003</x><y>485</y><w>224</w><h>88</h></coordinates><panel_attributes>IteratorTreeSetReverso
+--
+- collection: TreeSet&lt;Element&gt;
+- iterator: java.util.Iterator&lt;Element&gt;
+--
++ IteratorTreeSetReverso(c: TreeSet&lt;Element&gt;)
++ getNext() : Element
++ hasMore() : boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>627</x><y>565</y><w>24</w><h>152</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>867</x><y>565</y><w>24</w><h>152</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>891</x><y>293</y><w>24</w><h>208</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>635</x><y>293</y><w>24</w><h>208</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;240</additional_attributes></element></diagram>

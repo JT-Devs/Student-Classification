@@ -20,61 +20,76 @@
 
 ## Descripción del Proyecto
 
-Este proyecto en Java tiene como objetivo la creación de un sistema que permite almacenar, recorrer y procesar información estudiantil aplicando los patrones de diseño **Iterator** y **Visitor**.
+Este proyecto en Java tiene como objetivo la creación de un sistema que permite almacenar, recorrer y procesar información de personas (estudiantes y docentes), aplicando los patrones de diseño **Iterator** y **Visitor**.
 
 A partir del escenario problema planteado, se estructura una solución que involucra:
 
-* Uso de `TreeSet<E>` y `ArrayList<E>` para manejar colecciones de estudiantes.
+* Uso de `TreeSet<Element>` y `ArrayList<Element>` para manejar colecciones ordenadas y por inserción.
+* Validación y notificación sobre datos incompletos mediante el patrón Visitor.
+* Diferenciación de reglas de negocio por tipo de persona (por ejemplo, docentes con códigos válidos de máximo 4 dígitos).
+* Implementación de **cuatro tipos de recorrido**: ascendente y descendente, tanto para lista como para conjunto.
 
-* Definición de una clase de datos estudiantiles que incluye:
-  * Código
-  * Nombres
-  * Dirección
-  * Lista de teléfonos
-* Implementación de dos tipos de recorrido diferentes (ordenado y por inserción).
-* Validación de datos estudiantiles y notificación si hay campos incompletos.
+***
 
 ## Características
 
-1. **Estructura de Datos**
-   * `TreeSet`: Para mantener los estudiantes ordenados alfabéticamente o por código.
-   * `ArrayList`: Para conservar el orden de inserción.
+### 1. **Estructura de Datos**
 
-2. **Patrón Iterator**
-   * Se crea una interfaz `Iterator<E>` personalizada que permite recorrer las estructuras de datos mencionadas.
-   * Se garantiza independencia del recorrido respecto a la estructura de la colección.
+* `TreeSet`: Para mantener los elementos ordenados alfabéticamente (por `toString()`).
+* `ArrayList`: Para conservar el orden de inserción.
 
-3. **Patrón Visitor**
-   * Se utiliza para realizar operaciones sobre los datos estudiantiles sin modificar sus clases.
-   * Por ejemplo, verificar si un estudiante tiene toda su información completa o aplicar reglas de negocio adicionales.
+### 2. **Patrón Iterator**
+
+* Se define una interfaz `Iterator` personalizada.
+* Se implementan cuatro clases de iteradores:
+  - `IteratorArrayList`: recorre la lista de inicio a fin.
+  - `IteratorArrayListReverso`: recorre la lista en orden inverso.
+  - `IteratorTreeSet`: recorre el conjunto en orden ascendente.
+  - `IteratorTreeSetReverso`: recorre el conjunto en orden descendente.
+* Esto permite recorrer cualquier colección de forma uniforme.
+
+### 3. **Patrón Visitor**
+
+* Se define un Visitor que valida los datos ingresados por los usuarios.
+* El sistema notifica si:
+  - Faltan campos como nombre, dirección o teléfonos.
+  - Si el código del docente tiene más de 4 dígitos (regla específica).
+* La lógica de validación está separada de las clases del modelo.
+
+***
 
 ## Requisitos del Sistema
 
-* JDK 11 o superior
+* Java JDK 11 o superior
 * IDE compatible con Java (Eclipse, IntelliJ, VS Code)
 * Maven (opcional, si deseas manejar dependencias)
+
+***
 
 ## Estructura del Proyecto
 
 ```plaintext
 src/
-├── dominio/                 # Clases del modelo de negocio
-│   └── Estudiante.java
-│
-├── visitor/                 # Elementos del patrón Visitor
-│   ├── Visitor.java
-│   ├── VisitorValidacionDatos.java
+├── dominio/                   # Clases del modelo de negocio
+│   ├── Estudiante.java
+│   ├── Docente.java
 │   └── Element.java
 │
-├── iterator/                # Elementos del patrón Iterator
-│   ├── IteradorEstudiante.java
+├── visitor/                   # Elementos del patrón Visitor
+│   ├── Visitor.java
+│   └── VisitorValidacionDatos.java
+│
+├── iterator/                  # Elementos del patrón Iterator
+│   ├── Iterator.java
 │   ├── IterableColeccion.java
 │   ├── IteratorArrayList.java
-│   └── IteratorTreeSet.java
+│   ├── IteratorArrayListReverso.java
+│   ├── IteratorTreeSet.java
+│   └── IteratorTreeSetReverso.java
 │
-├── coleccion/              # Colección contenedora
-│   └── ColeccionEstudiantes.java
+├── coleccion/                 # Colección contenedora
+│   └── ColeccionElementos.java
 │
-└── app/                    # Lógica de aplicación
-    └── Client.java         # Clase con método main
+└── app/                       # Lógica de aplicación
+    └── Client.java            # Clase con el método main y menú interactivo
 ```
