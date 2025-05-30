@@ -11,6 +11,12 @@
 
 ***
 
+## UML
+
+![UML](docs/UML.png)
+
+***
+
 ## Descripción del Proyecto
 
 Este proyecto en Java tiene como objetivo la creación de un sistema que permite almacenar, recorrer y procesar información estudiantil aplicando los patrones de diseño **Iterator** y **Visitor**.
@@ -49,4 +55,25 @@ A partir del escenario problema planteado, se estructura una solución que invol
 
 ## Estructura del Proyecto
 
-Por definir...
+```plaintext
+src/
+├── dominio/                 # Clases del modelo de negocio
+│   └── Estudiante.java
+│
+├── visitor/                 # Elementos del patrón Visitor
+│   ├── Visitor.java
+│   ├── VisitorValidacionDatos.java
+│   └── Element.java
+│
+├── iterator/                # Elementos del patrón Iterator
+│   ├── IteradorEstudiante.java
+│   ├── IterableColeccion.java
+│   ├── IteratorArrayList.java
+│   └── IteratorTreeSet.java
+│
+├── coleccion/              # Colección contenedora
+│   └── ColeccionEstudiantes.java
+│
+└── app/                    # Lógica de aplicación
+    └── Client.java         # Clase con método main
+```
