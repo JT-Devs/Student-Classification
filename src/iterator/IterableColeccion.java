@@ -1,5 +1,5 @@
 package iterator;
 
 public interface IterableColeccion {
-    IteradorEstudiante createIterator(String tipo);
+    Iterador createIterator(String tipo);
 }

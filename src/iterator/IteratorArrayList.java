@@ -3,7 +3,7 @@ package iterator;
 import java.util.ArrayList;
 import visitor.Element;
 
-public class IteratorArrayList implements IteradorEstudiante {
+public class IteratorArrayList implements Iterador {
     private ArrayList<Element> collection;
     private int index = 0;
 
