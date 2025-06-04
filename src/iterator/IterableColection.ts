@@ -1,4 +1,4 @@
-import type {Iterator} from './Iterator'
+import type { Iterator } from './Iterator.ts';
 
 export interface IterableColection {
   createIterator(tipo: string): Iterator ;

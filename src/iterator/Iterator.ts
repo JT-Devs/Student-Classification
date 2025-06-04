@@ -1,4 +1,6 @@
+import type {Element} from '@/visitor/Element.js';
+
 export interface Iterator {
-  hasMore(): boolean ;
-  getNext(): Element ;
+  hasNext(): boolean ;
+  getNext(): Element | null;
 }

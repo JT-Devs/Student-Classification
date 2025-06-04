@@ -1,5 +1,5 @@
-import {Professor} from '@/dominio/Professor';
-import {Student} from '@/dominio/Student';
+import type {Professor} from '@/dominio/Professor.js';
+import type {Student} from '@/dominio/Student.js';
 
 export interface Visitor {
   visit(student: Student) : void;

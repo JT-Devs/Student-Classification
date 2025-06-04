@@ -1,18 +1,21 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2022",
     "useDefineForClassFields": true,
-    "module": "esnext",
+    "module": "nodenext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "rootDir": "./src",
+    "outDir": "./dist",
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
 
     /* Linting */
     "strict": true,
@@ -21,11 +24,12 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",   
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["src/*"],
     },
   },
-  "include": ["src/**/*"],
+  "include": ["src"],
   "exclude": ["dist", "node_modules"],
 
 

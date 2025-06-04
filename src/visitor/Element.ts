@@ -1,5 +1,5 @@
-import type {Visitor} from './Visitor';
+import type { Visitor } from './Visitor.ts';
 
-export interface Element {
+export interface Element{
   accept(visitor: Visitor): void;
 }
